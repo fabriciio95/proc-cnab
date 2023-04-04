@@ -14,11 +14,11 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import com.processamento.cnab.core.dto.LojaDTO;
 import com.processamento.cnab.domain.model.Loja;
 import com.processamento.cnab.domain.model.Transacao;
 import com.processamento.cnab.domain.model.enums.TipoTransacao;
 import com.processamento.cnab.domain.repository.LojaRepository;
-import com.processamento.cnab.dto.LojaDTO;
 
 @ExtendWith(MockitoExtension.class)
 class LojaServiceTest {

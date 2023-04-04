@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.processamento.cnab.core.dto.LojaDTO;
 import com.processamento.cnab.domain.service.LojaService;
-import com.processamento.cnab.dto.LojaDTO;
 
 import lombok.AllArgsConstructor;
 

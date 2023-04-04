@@ -1,4 +1,4 @@
-package com.processamento.cnab.dto;
+package com.processamento.cnab.core.dto;
 
 import java.math.BigDecimal;
 import java.time.format.DateTimeFormatter;

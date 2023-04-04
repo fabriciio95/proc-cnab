@@ -6,10 +6,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.processamento.cnab.core.dto.LojaDTO;
 import com.processamento.cnab.domain.model.Loja;
 import com.processamento.cnab.domain.model.Transacao;
 import com.processamento.cnab.domain.repository.LojaRepository;
-import com.processamento.cnab.dto.LojaDTO;
 
 import lombok.AllArgsConstructor;
 

@@ -7,5 +7,10 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-
-        
+  security:
+    oauth2:
+      resourceserver:
+         opaquetoken:
+             introspection-uri: http://${AUTH_HOST:localhost:8080}/oauth/check_token
+             client-id: proc-cnab-web
+             client-secret: web123
