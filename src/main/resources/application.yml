@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost:5432}/db_transacoes_loja?useTimezone=true&serverTimezone=GMT-3&allowPublicKeyRetrieval=true&useSSL=false
+    username: postgres
+    password: ${DB_PASSWORD:my_password}
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+        
