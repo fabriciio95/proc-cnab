@@ -26,4 +26,14 @@ public enum TipoTransacao {
 		this.natureza = natureza;
 		this.sinal = sinal;
 	}
+	
+	public static TipoTransacao obterTransacaoPeloTipo(String tipo) {
+		for(TipoTransacao tipoTransacao : values()) {
+			if(tipoTransacao.getTipo() == Integer.valueOf(tipo)) {
+				return tipoTransacao;
+			}
+		}
+		
+		return null;
+	}
 }
