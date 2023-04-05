@@ -1,0 +1,42 @@
+version: "3.9"
+
+networks: 
+   proc-cnab-network: 
+     driver: bridge
+
+
+services:
+   proc-cnab-postgres:
+     build: ./db-docker
+     image: proc-cnab-postgres
+     ports:
+       - "5432:5432"
+     networks:
+       - proc-cnab-network
+    
+   client-front:
+     build: ./client-front
+     ports:
+       - "80:80"
+     networks:
+       - proc-cnab-network
+     depends_on:
+       - proc-cnab-api 
+   
+   proc-cnab-api:
+     build: .
+     image: proc-cnab-api
+     command: ["/wait-for-it.sh", "-t", "30", "proc-cnab-postgres:5432", "--", "java", "-jar", "api.jar"]
+     environment:
+       DB_HOST: proc-cnab-postgres
+       DB_PASSWORD: postgres
+       CORS_ORIGINS: http://localhost
+     ports:
+      - "8080:8080"
+     networks:
+       - proc-cnab-network
+     depends_on:
+       - proc-cnab-postgres       
+       
+  
+      

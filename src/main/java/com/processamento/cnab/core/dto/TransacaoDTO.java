@@ -16,6 +16,8 @@ public class TransacaoDTO {
 	
 	private String tipo;
 	
+	private String natureza;
+	
 	private String dataOcorrencia;
 	
 	private BigDecimal valor;
@@ -27,6 +29,7 @@ public class TransacaoDTO {
 	public TransacaoDTO(Transacao entidade) {
 		this.id = entidade.getId();
 		this.tipo = entidade.getTipo().getDescricao();
+		this.natureza = entidade.getTipo().getNatureza();
 		this.dataOcorrencia = entidade.getDataOcorrencia().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
 		this.valor = entidade.getValor();
 		this.cpf = entidade.getCpf();

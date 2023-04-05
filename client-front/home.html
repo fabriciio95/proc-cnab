@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Gerenciamento CNAB</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Gerenciamento CNAB</h1>
+        <div class="tabs">
+            <button class="tab-button active" onclick="changeTab(0)">Upload CNAB</button>
+            <button class="tab-button" onclick="changeTab(1)">Visualizar Dados</button>
+        </div>
+        <div class="tab-content active">
+            <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">
+                <div class="file-upload">
+                    <label for="cnab-file" class="file-upload-label">
+                        Clique aqui para selecionar o arquivo
+                    </label>
+                    <input type="file" name="cnab-file" id="cnab-file" accept=".txt" required>
+                </div>
+                <button type="submit" class="submit-button">Enviar arquivo</button>
+            </form>
+        </div>
+        <div  id="table-container" class="tab-content">
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>Loja</th>
+                        <th>Proprietário</th>
+                        <th>Saldo Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

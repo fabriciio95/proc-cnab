@@ -10,8 +10,6 @@ import java.net.URLStreamHandler;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
@@ -110,6 +108,10 @@ public class SpringFoxConfig implements WebMvcConfigurer {
 					new ResponseMessageBuilder()
 						.code(HttpStatus.INTERNAL_SERVER_ERROR.value())
 						.message("Erro interno no servidor")
+						.build(),
+					new ResponseMessageBuilder()
+						.code(HttpStatus.UNAUTHORIZED.value())
+						.message("Não Autorizado")
 						.build()
 				);
 	}
